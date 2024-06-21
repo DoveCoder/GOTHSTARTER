@@ -19,6 +19,7 @@ func main() {
 
 	router.Handle("/*", gothstarter.Public())
 	router.Get("/", handlers.Make(handlers.HandleHome))
+	router.Get("/login", handlers.Make(handlers.HandleLoginIndex))
 
 	listenAddr := os.Getenv("LISTEN_ADDR")
 	slog.Info("HTTP server listening on", "ListenAddr", listenAddr)
